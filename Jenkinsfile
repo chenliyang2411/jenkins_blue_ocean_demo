@@ -1,21 +1,8 @@
-pipeline {
-    agent any
+@Library('global_pipeline_libraries_demo') _
 
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
-    }
-}
+def config = [
+        [name:"abc", age:10],
+        [name:"abc2", age:15]
+    ]
+
+sayHello(config)
